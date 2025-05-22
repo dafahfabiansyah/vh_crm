@@ -142,7 +142,7 @@ const AgentSettings = () => {
         const localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         setTimezone(localTimezone);
       } catch (error) {
-        console.error("Error fetching timezones:", error);
+        // console.error("Error fetching timezones:", error);
         setTimezones([
           { value: "GMT+7:00", label: "(GMT+7:00) Bangkok, Hanoi, Jakarta" },
         ]);
