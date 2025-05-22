@@ -129,6 +129,7 @@ const AgentSettings = () => {
           const date = new Date();
           const options = { timeZone: tz, timeZoneName: "long" };
           const dateString = date.toLocaleString("id-ID", options);
+          console.log("dateString", dateString);
           const offset = getTimezoneOffset(tz);
           return {
             value: tz,
@@ -158,7 +159,7 @@ const AgentSettings = () => {
     const fetchAgentSettings = async () => {
       try {
         const response = await fetchWithAuth(
-          `/api/v1/tenant/agents/${id}/settings`
+          `${config.API_URL}/api/v1/tenant/agents/${id}/settings`
         );
         if (!response.ok) throw new Error("Failed to fetch agent settings");
         const data = await response.json();
@@ -243,7 +244,7 @@ const AgentSettings = () => {
       setSaveSuccess(true);
       setHasChanges(false); // Reset hasChanges after save
       setTimeout(() => setSaveSuccess(false), 3000);
-      await fetchWithAuth(`/api/v1/tenant/agents/${id}/settings`, {
+      await fetchWithAuth(`${config.API_URL}/api/v1/tenant/agents/${id}/settings`, {
         method: "PUT",
         body: JSON.stringify({
           behavior,
