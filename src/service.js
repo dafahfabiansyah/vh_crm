@@ -4,7 +4,7 @@ import { config } from "./config";
 // Fetch agent data by id
 export async function getAgentById(id, token) {
   const res = await fetchWithAuth(
-    `http://${config.HOST}:${config.PORT}/api/v1/tenant/agents/${id}`,
+    `https://${config.HOST}:${config.PORT}/api/v1/tenant/agents/${id}`,
     {
       method: "GET",
       headers: {
@@ -20,7 +20,7 @@ export async function getAgentById(id, token) {
 // Update agent data by id
 export async function updateAgentById(id, data, token) {
   const res = await fetchWithAuth(
-    `http://${config.HOST}:${config.PORT}/api/v1/tenant/agents/${id}`,
+    `https://${config.HOST}:${config.PORT}/api/v1/tenant/agents/${id}`,
     {
       method: "PUT",
       headers: {
@@ -37,7 +37,7 @@ export async function updateAgentById(id, data, token) {
 // Delete agent by id
 export async function deleteAgentById(id, token) {
   const res = await fetchWithAuth(
-    `http://${config.HOST}:${config.PORT}/api/v1/tenant/agents/${id}`,
+    `https://${config.HOST}:${config.PORT}/api/v1/tenant/agents/${id}`,
     {
       method: "DELETE",
       headers: {
@@ -53,7 +53,7 @@ export async function deleteAgentById(id, token) {
 // Fetch all agents
 export async function getAgents(token) {
   const res = await fetchWithAuth(
-    `http://${config.HOST}:${config.PORT}/api/v1/tenant/agents?limit=10&offset=0`,
+    `https://${config.HOST}:${config.PORT}/api/v1/tenant/agents?limit=10&offset=0`,
     {
       method: "GET",
       headers: {
@@ -69,7 +69,7 @@ export async function getAgents(token) {
 // Create a new agent
 export async function createAgent(data, token) {
   const res = await fetchWithAuth(
-    `http://${config.HOST}:${config.PORT}/api/v1/tenant/agents`,
+    `https://${config.HOST}:${config.PORT}/api/v1/tenant/agents`,
     {
       method: "POST",
       headers: {
@@ -96,7 +96,7 @@ export async function createAgent(data, token) {
 // Get agent roles
 export async function getRoles(token) {
   const res = await fetchWithAuth(
-    `http://${config.HOST}:${config.PORT}/api/v1/tenant/agents/roles`,
+    `https://${config.HOST}:${config.PORT}/api/v1/tenant/agents/roles`,
     {
       method: "GET",
       headers: {
